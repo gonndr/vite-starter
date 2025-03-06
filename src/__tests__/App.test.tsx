@@ -1,8 +1,11 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import App from '../App';
+import { screen } from '@testing-library/react';
+import renderApp from './utils/renderApp';
 
 test('Renders App', () => {
-  render(<App />);
-  screen.getByText('Vite + React');
+  jest.resetAllMocks();
+  renderApp();
+  screen.getByText(
+    'A simple template to help get you get started with Vite and React.'
+  );
 });
