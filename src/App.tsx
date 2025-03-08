@@ -1,8 +1,9 @@
-import { Box, Container, Typography, useColorScheme } from '@mui/joy';
+import { Box, Container, Typography } from '@mui/joy';
 import './App.scss';
 import Dropdown from './components/shared/Dropdown';
 import { DropdownOption } from './components/shared/types';
 import { Mode } from './styles/theme/types';
+import useTheme from './styles/theme/useTheme';
 
 const themeOptions: DropdownOption<Mode>[] = [
   { label: 'Light', value: 'light' },
@@ -10,7 +11,7 @@ const themeOptions: DropdownOption<Mode>[] = [
 ];
 
 function App() {
-  const { mode, setMode } = useColorScheme();
+  const { mode, setMode } = useTheme();
 
   return (
     <Container
@@ -23,11 +24,7 @@ function App() {
       }}
     >
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <Dropdown
-          options={themeOptions}
-          onChange={setMode}
-          value={mode || null}
-        />
+        <Dropdown options={themeOptions} onChange={setMode} value={mode} />
       </Box>
       <Box sx={{ width: '100%' }}>
         <Typography color="primary" sx={{ fontSize: 'lg', fontWeight: 'lg' }}>
@@ -39,31 +36,6 @@ function App() {
       </Box>
     </Container>
   );
-
-  // return (
-  //   <>
-  //     <div>
-  //       <a href="https://vite.dev" target="_blank">
-  //         <img src={viteLogo} className="logo" alt="Vite logo" />
-  //       </a>
-  //       <a href="https://react.dev" target="_blank">
-  //         <img src={reactLogo} className="logo react" alt="React logo" />
-  //       </a>
-  //     </div>
-  //     <h1>Vite + React</h1>
-  //     <div className="card">
-  //       <button onClick={() => setCount((count) => count + 1)}>
-  //         count is {count}
-  //       </button>
-  //       <p>
-  //         Edit <code>src/App.tsx</code> and save to test HMR
-  //       </p>
-  //     </div>
-  //     <p className="read-the-docs">
-  //       Click on the Vite and React logos to learn more
-  //     </p>
-  //   </>
-  // );
 }
 
 export default App;
