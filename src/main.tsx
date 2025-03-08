@@ -5,7 +5,7 @@ import ThemeProvider from './styles/theme/ThemeProvider.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
+    <ThemeProvider injectCssFirst>
       <App />
     </ThemeProvider>
   </StrictMode>

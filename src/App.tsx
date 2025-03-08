@@ -14,15 +14,7 @@ function App() {
   const { mode, setMode } = useTheme();
 
   return (
-    <Container
-      sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        minHeight: '100vh',
-        minWidth: '100vh',
-      }}
-    >
+    <Container className="container">
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
         <Dropdown options={themeOptions} onChange={setMode} value={mode} />
       </Box>
