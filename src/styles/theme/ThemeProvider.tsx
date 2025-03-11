@@ -6,7 +6,7 @@ import {
 import { FC, PropsWithChildren } from 'react';
 import theme from './theme';
 
-type Props = PropsWithChildren & { injectCssFirst?: boolean };
+type Props = PropsWithChildren<{ injectCssFirst?: boolean }>;
 
 const ThemeProvider: FC<Props> = ({ injectCssFirst, children }) => (
   <StyledEngineProvider injectFirst={injectCssFirst}>
