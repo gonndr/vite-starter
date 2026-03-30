@@ -23,9 +23,8 @@
     "noUncheckedSideEffectImports": true,
 
     /* Absolute imports */
-    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src", "./jest.setup.ts"]
